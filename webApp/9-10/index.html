@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calculator</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script>startdate = new Date();
+        clockStart = startdate.getTime();
+        function initStopwatch() {
+          var thisTime = new Date();
+          return (thisTime.getTime() - clockStart)/1000;
+        }
+        function getSecs() {
+          var tSecs = Math.round(initStopwatch());
+          var iSecs = tSecs % 60;
+          var iMins = Math.round((tSecs-30)/60);
+          var sSecs ="" + ((iSecs > 9) ? iSecs : "0" + iSecs);
+          var sMins ="" + ((iMins > 9) ? iMins : "0" + iMins);
+          document.getElementById("timer-counter").innerHTML = sMins+":"+sSecs;
+          setTimeout('getSecs()', 1000);
+        }</script>
+        <style>
+  .test{
+    text-transform: uppercase;
+    font: 1em sans-serif;
+    font-size: 13pt;
+}
+.test > span {
+    text-transform: uppercase;
+    font: 1em sans-serif;
+    font-size: 33pt;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', _ => {
+    const o = document.querySelector('.test')
+    o.dataset.txt = o.textContent
+    begin()
+    //
+    function begin() {
+        let val = o.dataset.txt
+        let i = o.dataset.i ?? 0
+        i = +i > val.length - 1 ? 0 : +i
+        const s = val[i]
+        const beg = val.substring(0, i)
+        const end = val.substring(i + 1, val.length)
+        val = `${beg}<span>${s}</span>${end}` 
+        o.innerHTML = val
+        o.dataset.i = ++i
+        setTimeout(begin, 1000)
+    }
+})
+</script>
+
+</head>
+<body onLoad="getSecs()">
+
+    <span id='timer-counter' style='color:red;font-size:150%;font-weight:bold;'></span>
+    <p class='test'>паралелепипед</p>
+    <marquee width="650" height="20" bgcolor="#33FF99" scrollamount="8"> Бегущая строка............... </marquee>
+
+</body>
+</html>

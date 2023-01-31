@@ -1,0 +1,32 @@
+.wrapper{
+    border: 1px solid black;
+    display: flex;
+    width: 800px;
+}
+.text-content{
+    width: 30%;
+}
+.text-content-center{
+    width: 100px;
+    margin: 0 auto;
+}
+.text-content p {
+    text-align: center;
+    display: block;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 5px;
+    transition: .3s;
+}
+
+.img-content img{
+    height: 300px;
+    width: 500px;
+    object-fit: cover;
+    transition: 1.3s;
+}
+.dog-img{
+    transition: 1.3s;
+    height: 299px;
+}

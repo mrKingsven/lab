@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="text/css" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./index.js"></script>
+
+
+</head>
+<body>
+    <style>
+        body {
+    cursor: none;
+    width: 100vw;
+    height: 100vh;
+  }
+  .lerpme {
+    box-sizing: border-box;
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    animation-name: reveal;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  @keyframes reveal {
+    100% {
+      opacity: 1;
+    }
+  }
+  #el1 {
+    width: 20vh;
+    height: 20vh;
+    border: 4vh solid #dd8088;
+    box-shadow: 2px 2px 30px #44656a, inset 2px 2px 30px #44656a;
+    animation-delay: 0.5s;
+  }
+  @media (orientation: landscape) {
+    #el1 {
+      width: 20vw;
+      height: 20vw;
+      border: 4vw solid #dd8088;
+    }
+  }
+  #el2 {
+    width: 4vh;
+    height: 4vh;
+    background-color: #e6b7ad;
+    box-shadow: 2px 2px 20px #44656a;
+  }
+  @media (orientation: landscape) {
+    #el2 {
+      width: 4vw;
+      height: 4vw;
+    }
+  }
+  #title {
+    display: block;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    font-family: 'Knewave', cursive;
+    font-size: 24px;
+    text-shadow: 1px 1px 3px #719998;
+    text-align: center;
+    color: #e4ddcb;
+    transform: translateX(-50%) translateY(-50%);
+    pointer-events: none;
+  }
+  #title::after {
+    content: "A Pen by Chris Caldwell";
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    margin-top: 1em;
+    color: #44656a;
+  }
+  
+    </style>
+    <div id="el1" class="lerpme"></div>
+    <div id="el2" class="lerpme"></div>
+</body>
+</html>

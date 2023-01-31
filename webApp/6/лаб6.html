@@ -1,0 +1,126 @@
+<!Docktype html>
+<html>
+<head><title></title>
+</head>
+<body>
+    <form>
+        <label for="name">ФИО:</label>
+        <input type="text" id="name" name="name" required>
+ 
+        <label for="das">Пол:</label>
+        <select id="das" name="das" size="1" required>
+            <option>Мужской</option>
+            <option>Женский</option>
+        </select>
+ 
+        <label for="nomber">Номер телефона:</label>
+        <input id="nomber" name="number" type="text" pattern="^\+7\d{10}" required>
+ 
+        <input type="checkbox" id="read" name="read" required>
+        <label for="read">Чтение</label>
+ 
+        <input type="checkbox" id="sport" name="sport" required>
+        <label for="sport">Спорт</label>
+ 
+        <input id="btn" type="button" VALUE="Зарегистрироваться">
+    </form>
+    <script>
+        document.getElementById("btn").onclick = btnHandler;
+ 
+        function btnHandler() {
+            let f = document.forms[0];
+            let str = "";
+            if (validate(f)) {
+                let formdata = new FormData(f);
+                for (let e of formdata.entries())
+                    str += `${e[0]}: ${e[1]}\n`;
+                alert(str);
+            }
+        }
+ 
+        function validate(form) {
+            let result = true,
+                str;
+            for (let item of form.elements)
+                if (!item.validity.valid) {
+                    if (item.validity.patternMismatch)
+                        str = `${item.id}: ${item.validationMessage} ${item.pattern}`
+                    else
+                        str = `${item.id}: ${item.validationMessage}`;
+                    result = false;
+                    alert(str);
+                    break;
+                }
+            return result
+        }
+    </script>
+
+<div id="main2">
+    <div class="h2">
+      <h2 class="H2">Тест</h2>
+    </div>
+  </div>
+    <br />
+
+    1. Я чувствую настроение другого человека, когда смотрю в его глаза во время разговора.<br>
+
+<label>
+<input type="radio" name="q1" value="1"> 
+абсолютно не согласен
+<input type="radio" name="q1" value="2"> 
+не согласен<input type="radio" name="q1" value="3"> скорее не согласен<input type="radio" name="q1" value="4"> скорее согласен<input type="radio" name="q1" value="5"> согласен<input type="radio" name="q1" value="6"> полностью</label>
+
+<br /><hr width="5" size="5" id="7"><hr>
+2.Мне легко смотреть на вещи с чужой точки зрения.
+<br>
+<label><input type="radio" name="q2" value="6"> абсолютно не согласен</label><label><input type="radio" name="q2" value="5"> не согласен</label><label><input type="radio" name="q2" value="4"> скорее не согласен</label><label><input type="radio" name="q2" value="3"> скорее согласен</label><label><input type="radio" name="q2" value="2"> согласен</label><label><input type="radio" name="q2" value="1"> полностью</label>
+<br /> <hr>
+3.  Когда я разговариваю с кем-то, я всегда ставлю себя на место другого человека.<br><label><input type="radio" name="q3" value="6"> абсолютно не согласен</label><label><input type="radio" name="q3" value="5"> не согласен</label><label><input type="radio" name="q3" value="4"> скорее не согласен</label><label><input type="radio" name="q3" value="3"> скорее согласен</label><label><input type="radio" name="q3" value="2"> согласен</label><label><input type="radio" name="q3" value="1"> полностью</label>
+<br /> <hr>
+4.  Я чувствую, когда кто-то не понимает, что я говорю.<br>
+<label><input type="radio" name="q4" value="6"> абсолютно не согласен</label><label><input type="radio" name="q4" value="5"> не согласен</label><label><input type="radio" name="q4" value="4"> скорее не согласен</label><label><input type="radio" name="q4" value="3"> скорее согласен</label><label><input type="radio" name="q4" value="2"> согласен</label><label><input type="radio" name="q4" value="1"> полностью</label>
+<br /><hr> 
+5.  Я выражаю свои мысли ясно.<br>
+<label><input type="radio" name="q5" value="6"> абсолютно не согласен</label><label><input type="radio" name="q5" value="5"> не согласен</label><label><input type="radio" name="q5" value="4"> скорее не согласен</label><label><input type="radio" name="q5" value="3"> скорее согласен</label><label><input type="radio" name="q5" value="2"> согласен</label><label><input type="radio" name="q5" value="1"> полностью</label>
+<br /> <hr>
+6.  Я чувствую себя комфортно, выражая свое несогласие с тем, кто является авторитетом.<br>
+<label><input type="radio" name="q6" value="6"> абсолютно не согласен</label><label><input type="radio" name="q6" value="5"> не согласен</label><label><input type="radio" name="q6" value="4"> скорее не согласен</label><label><input type="radio" name="q6" value="3"> скорее согласен</label><label><input type="radio" name="q6" value="2"> согласен</label><label><input type="radio" name="q6" value="1"> полностью</label>
+<br /> <hr>
+7.  Я с легкостью говорю о чувствах.
+<br>
+<label><input type="radio" name="q7" value="6"> абсолютно не согласен</label><label><input type="radio" name="q7" value="5"> не согласен</label><label><input type="radio" name="q7" value="4"> скорее не согласен</label><label><input type="radio" name="q7" value="3"> скорее согласен</label><label><input type="radio" name="q1" value="2"> согласен</label><label><input type="radio" name="q7" value="1"> полностью</label>
+<br /> <hr>
+8.  Люди с недоумением смотрят, когда я говорю.
+<br>
+<label><input type="radio" name="q8" value="6"> абсолютно не согласен</label><label><input type="radio" name="q8" value="5"> не согласен</label><label><input type="radio" name="q8" value="4"> скорее не согласен</label><label><input type="radio" name="q8" value="3"> скорее согласен</label><label><input type="radio" name="q8" value="2"> согласен</label><label><input type="radio" name="q8" value="7"> полностью</label>
+<br /><hr>
+9.  Когда я знаю, что хочет сказать человек, я заканчиваю предложение вместо него.
+<br><label><input type="radio" name="q9" value="1"> абсолютно не согласен</label><label><input type="radio" name="q9" value="2"> не согласен</label><label><input type="radio" name="q9" value="3"> скорее не согласен</label><label><input type="radio" name="q9" value="4"> скорее согласен</label><label><input type="radio" name="q9" value="5"> согласен</label><label><input type="radio" name="q9" value="6"> полностью</label><br /><hr>
+<br />10.   Всех психически больных людей необходимо изолировать от общества<br><label><input type="radio" name="q10" value="6"> абсолютно не согласен</label><label><input type="radio" name="q10" value="5"> не согласен</label><label><input type="radio" name="q10" value="4"> скорее не согласен</label><label><input type="radio" name="q10" value="3"> скорее согласен</label><label><input type="radio" name="q10" value="2"> согласен</label><label><input type="radio" name="q10" value="1"> полностью</label>
+<br /><hr>
+11. Я чувствую себя некомфортно, когда надо выражать эмоции.<br><label><input type="radio" name="q11" value="1"> абсолютно не согласен</label><label><input type="radio" name="q11" value="2"> не согласен</label><label><input type="radio" name="q11" value="3"> скорее не согласен</label><label><input type="radio" name="q11" value="4"> скорее согласен</label><label><input type="radio" name="q11" value="5"> согласен</label><label><input type="radio" name="q11" value="6"> полностью</label><br /><hr>
+<br />12.   МНЕ КАЖЕТСЯ, ЧТО ВСЕ ЛЮДИ ГЛУПЕЕ МЕНЯ. ПРОБЛЕМА В ЛЮДЯХ ИЛИ ВО МНЕ<br><label><input type="radio" name="q12" value="6"> абсолютно не согласен</label><label><input type="radio" name="q12" value="5"> не согласен</label><label><input type="radio" name="q12" value="4"> скорее не согласен</label><label><input type="radio" name="q12" value="3"> скорее согласен</label><label><input type="radio" name="q12" value="2"> согласен</label><label><input type="radio" name="q12" value="1"> полностью</label>
+<br /><hr>
+13. Если кто-то поступает со мной грубо, я отвечаю тем же<br><label><input type="radio" name="q13" value="6"> абсолютно не согласен</label><label><input type="radio" name="q13" value="5"> не согласен</label><label><input type="radio" name="q13" value="4"> скорее не согласен</label><label><input type="radio" name="q13" value="3"> скорее согласен</label><label><input type="radio" name="q13" value="2"> согласен</label><label><input type="radio" name="q13" value="1"> полностью</label>
+<br /><hr>
+14. ХОЧУ СТАТЬ ИНТЕРЕСНОЙ ЛИЧНОСТЬЮ, НО НИЧЕГО ДЛЯ ЭТОГО НЕ ДЕЛАЮ<br><label><input type="radio" name="q14" value="1"> абсолютно не согласен</label><label><input type="radio" name="q14" value="2"> не согласен</label><label><input type="radio" name="q14" value="3"> скорее не согласен</label><label><input type="radio" name="q14" value="4"> скорее согласен</label><label><input type="radio" name="q14" value="5"> согласен</label><label><input type="radio" name="q14" value="6"> полностью</label><br /><hr>
+<br />15.   МНЕ СТРАШНО ВЫСКАЗЫВАТЬ СВОЕ МНЕНИЕ, ПОТОМУ ЧТО Я БОЮСЬ ВОЗРАЖЕНИЙ.<br><label><input type="radio" name="q15" value="6"> абсолютно не согласен</label><label><input type="radio" name="q15" value="5"> не согласен</label><label><input type="radio" name="q15" value="4"> скорее не согласен</label><label><input type="radio" name="q15" value="3"> скорее согласен</label><label><input type="radio" name="q15" value="2"> согласен</label><label><input type="radio" name="q15" value="1"> полностью</label>
+<br /><hr>
+16. СОВЕСТЬ МУЧАЕТ, НО Я ПРОДОЛЖАЮ СРЫВАТЬ ВСЕ СРОКИ<br><label><input type="radio" name="q16" value="1"> абсолютно не согласен</label><label><input type="radio" name="q16" value="2"> не согласен</label><label><input type="radio" name="q61" value="3"> скорее не согласен</label><label><input type="radio" name="q16" value="4"> скорее согласен</label><label><input type="radio" name="q16" value="5"> согласен</label><label><input type="radio" name="q16" value="6"> полностью</label><br /><hr>
+<br />17.   Человек, который думает не так, как я, вызывает у меня раздражение<br><label><input type="radio" name="q17" value="6"> абсолютно не согласен</label><label><input type="radio" name="q17" value="5"> не согласен</label><label><input type="radio" name="q17" value="4"> скорее не согласен</label><label><input type="radio" name="q17" value="3"> скорее согласен</label><label><input type="radio" name="q17" value="2"> согласен</label><label><input type="radio" name="q17" value="1"> полностью</label>
+<br /><hr>
+18. У ВСЕХ МОИХ ЗНАКОМЫХ ЕСТЬ МНОГО ХОББИ И ЦЕЛЕЙ, А У МЕНЯ — НИЧЕГО<br><label><input type="radio" name="q18" value="6"> абсолютно не согласен</label><label><input type="radio" name="q18" value="5"> не согласен</label><label><input type="radio" name="q18" value="4"> скорее не согласен</label><label><input type="radio" name="q18" value="3"> скорее согласен</label><label><input type="radio" name="q18" value="2"> согласен</label><label><input type="radio" name="q18" value="1"> полностью</label>
+<br /><hr>
+19. Беспорядок меня очень раздражает<br><label><input type="radio" name="q19" value="6"> абсолютно не согласен</label><label><input type="radio" name="q19" value="5"> не согласен</label><label><input type="radio" name="q19" value="4"> скорее не согласен</label><label><input type="radio" name="q19" value="3"> скорее согласен</label><label><input type="radio" name="q19" value="2"> согласен</label><label><input type="radio" name="q19" value="1"> полностью</label>
+
+
+<input type="button" value="Результат теста"    onclick="for (var inp = document.getElementsByTagName ('INPUT'),
+s = j = 0, J = inp.length - 1; j < J; j++)
+if (inp [j].checked) s += parseInt (inp [j].value);
+alert ('Вы набрали ' + s + ' баллов.')">
+
+          
+  </div>
+
+</body>
+</html>

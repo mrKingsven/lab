@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script type='text/javascript' src="js/puzzle.js"></script>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="buttons">
+            <input type="button" id="b1" value="1" />
+            <input type="button" id="b2" value="2" />
+            <input type="button" id="b3" value="3" />
+        </div>
+        <script>
+            let buttons = document.getElementById("buttons"),
+                answer = "231",
+                start,
+                pass2;
+            buttons.onclick = handler;
+     
+            function handler(e) {
+                if (!start) {
+                    if (e.target.value === answer[0]) {
+                        start = new Date();
+                    }
+                }
+                else {
+                    if (!pass2) {
+                        if (e.target.value === answer[1] && new Date() - start <= 5000)
+                            pass2 = true;
+                        else
+                            start = null;
+                    }
+                    else {
+                        if (e.target.value === answer[2] && new Date() - start <= 5000)
+                            window.location = "http://ya.ru"; // открывается определенная страница
+                        else {
+                            start = null;
+                            pass2 = false;
+                        }
+                    }
+                }
+            }
+        </script>
+        <div>Пароль 231</div>
+    </body>
+</html>

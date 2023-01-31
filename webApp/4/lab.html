@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаб1</title>
+</head>
+<body></body>
+
+<script>
+  function crTable() {
+  let tAdd = document.getElementById('tableU');
+  let table = '<table border=1><tr>';
+  for (let x = 1; x < 11; x++) {
+    for (let y = 1; y < 11; y++) {
+      let el = '<td>' + x + 'x' + y + ' = ' + x * y + '</td>';
+      table += el;
+    }
+    table += '</tr><tr>';
+  }
+  table += '</tr></table>';
+  //console.log(table);
+  tAdd.innerHTML = table;
+}</script>
+<input type="button" onclick="crTable()" value="Показать таблицу умножения" style="width:250px;font-size:15px;" />
+<div id="tableU"></div>
+</body>
+</html>
